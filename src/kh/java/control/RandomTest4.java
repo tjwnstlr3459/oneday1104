@@ -32,6 +32,7 @@ public class RandomTest4 {
 			while(en) {
 				if(money == 0) {
 					System.out.println("잔액이 없습니다. bye~");
+					break;
 				}
 				int sum1 = 0;
 				int sum2 = 0;
@@ -48,11 +49,16 @@ public class RandomTest4 {
 				char sel = sc.next().toLowerCase().charAt(0);
 				
 				if(sel == 'y') {
-					
+					boolean mo=true;
+					while(mo) {
 					System.out.print("얼마를 배팅하시겠습니까?(현재 내 소지금"+money+"원) : ");
 					batt = sc.nextInt();
-					if(money>batt) {
-						System.out.println("금액이 부족합니다 다시입력해 주세요");
+					if(money<batt) {
+						System.out.println("돈을 초과했습니다. 다시 입력하세요");
+						continue;
+						}else {
+							mo = false;
+						}
 					}
 					for(int i=0; i<3; i++) {
 						int random = ran.nextInt(6)+1;
@@ -65,7 +71,7 @@ public class RandomTest4 {
 						System.out.println("+"+batt+"원");
 						win++;
 						money += batt;
-						System.out.println("한번 더 하시겠습니까?[y/n]");
+						System.out.print("한번 더 하시겠습니까?[y/n]");
 						char ch = sc.next().toLowerCase().charAt(0);
 						if(ch=='y') {
 							continue;
@@ -74,7 +80,7 @@ public class RandomTest4 {
 					}else if(sum1<sum2) {
 						System.out.println("패배");
 						System.out.println("-"+batt+"원");
-						lose--;
+						lose++;
 						money -= batt;
 						if(money <= 0) {
 							System.out.println("거지ㅠㅠ");
@@ -82,20 +88,27 @@ public class RandomTest4 {
 							en = false;
 							break;
 						}
-					}
+						System.out.println("한번 더 하시겠습니까?[y/n]");
+						char ch = sc.next().toLowerCase().charAt(0);
+						if(ch=='y') {
+							continue;
+						}en = false;
+						break;
+					}else {
+						System.out.println("비겼습니다.");
+						System.out.println("한번더 하시겠습니까?[y/n]");
+						char ch = sc.next().toLowerCase().charAt(0);
+						if(ch=='y') {
+							continue;
+						}en = false;
+						break;
+					}	
 				}else if(sel =='n'){
 					en = false;
 					break;
-				}else {
-					System.out.println("비겼습니다.");
-					System.out.println("한번더 하시겠습니까?[y/n]");
-					char ch = sc.next().toLowerCase().charAt(0);
-					if(ch=='y') {
-						continue;
-					}en = false;
-					break;
-				}	
-			}
+					}
+				}
+			
 			break;
 		case 2:
 			System.out.println("<< 당신의 전적 >>");
@@ -105,11 +118,32 @@ public class RandomTest4 {
 		case 3:
 			en = false;
 			break;
+		
 			}
 		}
 	}
 }	
 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
