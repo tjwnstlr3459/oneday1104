@@ -36,7 +36,11 @@ public class RandomTest3 {
 			System.out.println(" Your Turn ");
 			System.out.print("입력(1~3) : ");
 			int put = sc.nextInt();
-	
+			if(put<1 || put>3) {
+				System.out.println("잘못된 범위 입니다.");
+				continue;
+			}
+			
 			if(count<31) {
 				if(put == 1) {
 				for(int i=0; i<put; i++) {
@@ -87,6 +91,8 @@ public class RandomTest3 {
 		}
 	}
 }
+
+
 
 
 
