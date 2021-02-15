@@ -5,7 +5,7 @@ public class ArrayTest {
 	 public void test1() {
 		 //정수형변수 5개를 선언하여 순서대로 1,2,3,4,5를 대입
 		 int num1 = 1;
-		 int num2 = 2;
+		 int num2 = 2;    
 		 int num3 = 3;
 		 int num4 = 4;
 		 int num5 = 5;

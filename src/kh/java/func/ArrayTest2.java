@@ -10,7 +10,7 @@ public class ArrayTest2 {
 		
 		//1-1. 배열 인덱스를 이용해서 바나나 출력
 		System.out.println(arr[4]);
-		//1-2. for문을 쓰지 않고 전체 출력
+		//1-2. for문을 쓰지 않고 전체 출력    
 		System.out.println(arr[0]);
 		System.out.println(arr[1]);
 		System.out.println(arr[2]);
