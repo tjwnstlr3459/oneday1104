@@ -75,7 +75,7 @@ public class ArrayTest2 {
 		for (int i = 0; i < arr.length-1; i++) {
 			
 			for (int j = 0; j < arr.length-i-1; j++) {	//i를 넣나 안넣나 결과는 같지만 데이터를 위해서
-				if(arr[j]>arr[j+1]) {
+				if(arr[j]<arr[j+1]) {
 					int tmp = arr[j];
 					arr[j] = arr[j+1];
 					arr[j+1] = tmp;
