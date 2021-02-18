@@ -17,7 +17,11 @@ public class Strart {
 		TV tv = new TV();
 		
 		tv.power();
-		while(true) {
+		System.out.println(tv.power);
+		tv.volUp();
+		System.out.println(tv.vol);
+		
+		/*while(true) {
 			System.out.println("1. º¼·ý ¾÷");
 			System.out.println("2. º¼·ý ´Ù¿î");
 			System.out.println("3. Ã¤³Î ¾÷");
@@ -50,7 +54,7 @@ public class Strart {
 				break;
 			
 			}
-		}
+		}*/
 
 	}
 }
