@@ -46,6 +46,7 @@ public class StudentMgr {
 				modifyStudent();
 				break;
 			case 5:
+				deleteStudent();
 				break;
 			case 0:
 				System.out.println("bye~!");
@@ -126,6 +127,29 @@ public class StudentMgr {
 			addr[mo] = sc.nextLine();
 		}
 	}
+	
+	//학생정보 삭제
+		public void deleteStudent() {
+			System.out.println("\n----학생 정보 삭제----\n");
+			System.out.print("삭제할 학생 이름 입력 : ");
+			String dName = sc.next();
+			int searchIndex = searchStudent(dName);
+			if(searchIndex == -1) {
+				System.out.println("학생 정보가 없습니다.");
+			}else {
+				//삭제
+				for(int i = searchIndex; i <index -1; i++) {//삭제된 배열인데스로부터 다음인덱스(-1)까지
+					name[i] = name[i+1];					//뒤에서 한칸식 앞으로 옮김
+					age[i] = age[i+1];
+					addr[i] = addr[i+1];
+				}
+				index--;					//옮기는게 다 끝나면 인덱스 순서를 앞으로 뺌
+				name[index] = null;			//앞으로 뺀 배열값들을 초기화
+				age[index] = 0;
+				addr[index] = null;
+				System.out.println("삭제 완료");
+			}
+		}
 	
 	//학생이름을 매개변수로 받아서 name배열에 몇번째 인덱스에 있는지 찾는 메소드
 	public int searchStudent(String searchName) {
