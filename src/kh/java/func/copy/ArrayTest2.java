@@ -1,4 +1,4 @@
-package kh.java.func;
+package kh.java.func.copy;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ public class ArrayTest2 {
 		
 		//1-1. 배열 인덱스를 이용해서 바나나 출력
 		System.out.println(arr[4]);
-		//1-2. for문을 쓰지 않고 전체 출력    
+		//1-2. for문을 쓰지 않고 전체 출력
 		System.out.println(arr[0]);
 		System.out.println(arr[1]);
 		System.out.println(arr[2]);
@@ -75,7 +75,7 @@ public class ArrayTest2 {
 		for (int i = 0; i < arr.length-1; i++) {
 			
 			for (int j = 0; j < arr.length-i-1; j++) {	//i를 넣나 안넣나 결과는 같지만 데이터를 위해서
-				if(arr[j]<arr[j+1]) {
+				if(arr[j]>arr[j+1]) {
 					int tmp = arr[j];
 					arr[j] = arr[j+1];
 					arr[j+1] = tmp;
